@@ -1,0 +1,49 @@
+<div *ngIf="offer; else notFound">
+  <div class="offer-info">
+    <img
+      *ngIf="offer.imageUrl"
+      [src]="offer.imageUrl"
+      alt="{{ offer.title }} image"
+      class="detail-image"
+    />
+    <div class="details">
+      <span class="title">
+        <strong>{{ offer.title }}</strong>
+      </span>
+      <span class="vote-counts">
+        <span> <mat-icon>thumb_up</mat-icon> {{ offer.upVotes }} </span>
+        <span> <mat-icon>thumb_down</mat-icon> {{ offer.downVotes }} </span>
+      </span>
+      <span class="condition">
+        Item condition: <strong>{{ offer.condition }}</strong>
+      </span>
+      <span class="merchant">
+        Merchant: <strong>{{ offer.merchant }}</strong>
+      </span>
+      <span class="price">
+        <strong>€{{ offer.price }}</strong>
+      </span>
+      <div>
+        <button mat-raised-button color="primary" (click)="redirectToCart()">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="vote-actions">
+    <p>Do you like this offer?</p>
+    <button mat-icon-button color="primary" (click)="upvote()">
+      <mat-icon>thumb_up</mat-icon>
+    </button>
+    <button mat-icon-button color="warn" (click)="downvote()">
+      <mat-icon>thumb_down</mat-icon>
+    </button>
+  </div>
+  <div class="description-wrapper">
+    <h3>Description</h3>
+    <p class="description">{{ offer.description }}</p>
+  </div>
+</div>
+<ng-template #notFound>
+  <p>Offer not found.</p>
+</ng-template>

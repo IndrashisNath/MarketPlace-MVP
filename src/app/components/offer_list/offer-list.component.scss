@@ -1,0 +1,138 @@
+.offers-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.offer-card {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: transform 0.2s;
+  cursor: pointer;
+  padding: 0;
+}
+
+.offer-card:hover {
+  transform: translateY(-4px);
+}
+
+.card-content-wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+}
+
+.card-content-wrapper img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+mat-card-header {
+  min-width: 0;
+  padding: 0;
+}
+
+.title-wrapper {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 18px;
+  line-height: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 48px;
+  width: 100%;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.votes {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.offer-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+  margin-top: auto;
+}
+
+.offer-actions button {
+  width: 90%;
+  color: #ffffff;
+  background-color: #2f2f2f;
+  font-weight: bold;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  .offers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card-content-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .card-content-wrapper img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 12px;
+  }
+
+  .card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .offer-actions {
+    justify-content: flex-start;
+  }
+
+  .offer-actions button {
+    width: 100%;
+    border-radius: 24px;
+  }
+}

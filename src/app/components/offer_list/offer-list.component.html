@@ -1,0 +1,47 @@
+<div class="offers-list" *ngIf="offers$ | async as offers">
+  <mat-card
+    class="offer-card"
+    *ngFor="let offer of offers"
+    (click)="viewDetails(offer)"
+  >
+    <div class="card-content-wrapper">
+      <img
+        mat-card-image
+        [src]="offer.imageUrl"
+        alt="{{ offer.title }} image"
+      />
+
+      <div class="card-info">
+        <mat-card-header>
+          <div class="title-wrapper">
+            <mat-card-title class="title">{{ offer.title }}</mat-card-title>
+          </div>
+        </mat-card-header>
+
+        <div class="spacer"></div>
+
+        <mat-card-content>
+          <div class="info-row">
+            <p class="price">
+              <strong>€{{ offer.price }}</strong>
+            </p>
+            <p class="votes">
+              <mat-icon>thumb_up</mat-icon>
+              <strong>{{ offer.upVotes }}</strong>
+            </p>
+          </div>
+        </mat-card-content>
+
+        <mat-card-actions class="offer-actions">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="redirectToCart($event)"
+          >
+            Add to Cart
+          </button>
+        </mat-card-actions>
+      </div>
+    </div>
+  </mat-card>
+</div>

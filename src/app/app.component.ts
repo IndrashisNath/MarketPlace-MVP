@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
+  imports: [MatToolbarModule, RouterOutlet],
 })
 export class AppComponent {
-  title = 'rebuy-marketplace';
+  title = 'rebuy-marketplace-mvp';
 }
